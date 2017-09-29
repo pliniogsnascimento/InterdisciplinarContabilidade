@@ -1,0 +1,24 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.form-login {
+    border: solid 2px #afafaf;
+    padding: 50px;
+    border-radius: 5px;
+    margin: 10%;
+}
+
+.btn-login {
+    margin: 10px 0 0 0;
+}
+
+.image {
+    height: 885px;
+}
+
+.bg-semi-black {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid white;
+}

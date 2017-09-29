@@ -1,0 +1,12 @@
+#Ignore config files
+.settings
+.classpath
+.project
+
+#Class files
+*.class
+
+#Generated files
+.springBeans
+.directory
+target
