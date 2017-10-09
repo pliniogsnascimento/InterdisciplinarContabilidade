@@ -1,5 +1,12 @@
 package com.fatec.interdisciplinar.service;
 
-public interface FuncionarioService {
+import java.util.List;
 
+import com.fatec.interdisciplinar.model.Funcionario;
+
+public interface FuncionarioService {
+	
+	void salvar(Funcionario funcionario);
+	List<Funcionario> finAll();
+	
 }
