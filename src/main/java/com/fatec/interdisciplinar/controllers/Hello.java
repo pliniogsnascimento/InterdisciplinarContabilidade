@@ -21,4 +21,9 @@ public class Hello {
 	public String home() {
 		return "home.html";
 	}
+	
+	@RequestMapping(value = "/CadastroFuncionario")
+	public String cadastroFuncionario() {
+		return "cadastro-funcionario.html";
+	}
 }

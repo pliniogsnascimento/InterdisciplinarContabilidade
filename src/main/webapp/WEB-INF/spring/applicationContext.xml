@@ -3,9 +3,49 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx"
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd">
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd
+		http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa-1.8.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+	
+	<context:property-placeholder location="/WEB-INF/spring/jdbc.properties" />
+	
+	<!-- Configurações de acesso MySQL -->
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+        p:driverClassName="com.mysql.jdbc.Driver" p:url="jdbc:mysql://localhost:3306/contabilidade"
+        p:username="plinio" p:password="" />
 
+    <bean id="hibernateJpaVendorAdapter"
+        class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
+
+    <!-- Configurações JPA -->
+    <bean id="entityManagerFactory"
+        class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="jpaVendorAdapter" ref="hibernateJpaVendorAdapter" />
+        <!-- Propriedades do JPA e Hibernate -->
+        <property name="jpaProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+            </props>
+        </property>
+        <!-- Local das entidades -->
+        <property name="packagesToScan" value="com.fatec.interdisciplinar.model" />
+    </bean>
+
+    <!-- Configure the transaction manager bean -->
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory" />
+    </bean>
+
+    <tx:annotation-driven />
+	
+	<!-- Local das interfaces repositories e services -->
+    <jpa:repositories base-package="com.fatec.interdisciplinar.repository" />
+    <context:component-scan base-package="com.fatec.interdisciplinar.service" />
 	
 </beans>
