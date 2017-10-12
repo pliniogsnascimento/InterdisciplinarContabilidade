@@ -9,9 +9,9 @@ import javax.persistence.Id;
 public class Funcionario {
 
 	public Funcionario() {
-	
+
 	}
-	
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long idFuncionario;
@@ -21,28 +21,7 @@ public class Funcionario {
 	private String email;
 
 	private String senha;
-	
-<<<<<<< HEAD
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
-	public String getNome() {
-		return nome;
-	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-	
-	@Override
-	public String toString() {
-		return "Funcionario [id=" + id + ", nome=" + nome + "]";
-	}
-	
-}
-=======
+
 
 	public Long getIdFuncionario() {
 		return idFuncionario;
@@ -78,4 +57,3 @@ public class Funcionario {
 
 
 }
->>>>>>> desenvolvimento
