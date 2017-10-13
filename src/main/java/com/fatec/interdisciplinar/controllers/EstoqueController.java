@@ -4,29 +4,29 @@ package com.fatec.interdisciplinar.controllers;
 import java.util.*;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.fatec.interdisciplinar.model.Produto;
 
 @Controller
+@RequestMapping("/Produto")
 public class EstoqueController {
 
 	public EstoqueController() {
 		
 	}
-	public void listarProdutos() {
-		// TODO implement here
+	
+	@RequestMapping(method = RequestMethod.GET)
+	public String listarProdutos() {
+		return "busca-produto.html";
 	}
-
-	public void buscarProduto(String nome) {
+	
+	@RequestMapping(value = "/nome/{nome}")
+	public String buscarProduto(@PathVariable String nome) {
 		// TODO implement here
-	}
-
-	public void alterarProduto(Produto produto) {
-		// TODO implement here
-	}
-
-	public void excluirProduto(Long id) {
-		// TODO implement here
+		return "busca-produto.html";
 	}
 
 }

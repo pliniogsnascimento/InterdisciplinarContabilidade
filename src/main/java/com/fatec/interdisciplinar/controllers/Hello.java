@@ -17,6 +17,7 @@ public class Hello {
 	@Autowired
 	FuncionarioService funcionarioService;
 	
+	/*
 	@RequestMapping(value="/")
 	public String hello() {
 		return "hello.html";
@@ -87,5 +88,5 @@ public class Hello {
 		//}
 		
 		//return message;
-	}
+	}*/
 }
