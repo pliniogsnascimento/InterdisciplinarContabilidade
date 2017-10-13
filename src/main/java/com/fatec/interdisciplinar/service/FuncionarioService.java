@@ -7,6 +7,6 @@ import com.fatec.interdisciplinar.model.Funcionario;
 public interface FuncionarioService {
 	
 	void salvar(Funcionario funcionario);
-	List<Funcionario> finAll();
+	List<Funcionario> findAll();
 	
 }

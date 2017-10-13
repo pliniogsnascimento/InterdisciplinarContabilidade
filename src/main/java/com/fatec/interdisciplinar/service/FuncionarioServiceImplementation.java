@@ -14,11 +14,15 @@ public class FuncionarioServiceImplementation implements FuncionarioService {
 	@Autowired
 	FuncionarioRepository funcionarioRepository;
 	
+	public FuncionarioServiceImplementation() {
+		
+	}
+	
 	public void salvar(Funcionario funcionario) {
 		funcionarioRepository.save(funcionario);
 	}
 
-	public List<Funcionario> finAll() {
+	public List<Funcionario> findAll() {
 		return funcionarioRepository.findAll();
 	}
 
