@@ -1,9 +1,16 @@
 package com.fatec.interdisciplinar.model;
 
+import java.util.Calendar;
+import java.util.List;
+
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 public class Funcionario {
@@ -15,12 +22,18 @@ public class Funcionario {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long idFuncionario;
-
 	private String nome;
-
 	private String email;
-
 	private String senha;
+	private Sexo sexo;
+	@Temporal(TemporalType.DATE)
+	private Calendar dataNascimento;
+	private String telefone;
+	@OneToMany(targetEntity=Saida.class ,mappedBy="funcionario", fetch=FetchType.LAZY)
+	private List<Saida> saidas;
+	@OneToMany(targetEntity=Entrada.class ,mappedBy="funcionario", fetch=FetchType.LAZY)
+	private List<Entrada> entradas;
+	
 
 
 	public Long getIdFuncionario() {
@@ -53,6 +66,46 @@ public class Funcionario {
 
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+	
+	public List<Saida> getSaidas() {
+		return saidas;
+	}
+
+	public void setSaidas(List<Saida> saidas) {
+		this.saidas = saidas;
+	}
+
+	public Sexo getSexo() {
+		return sexo;
+	}
+
+	public void setSexo(Sexo sexo) {
+		this.sexo = sexo;
+	}
+	
+	public Calendar getDataNascimento() {
+		return dataNascimento;
+	}
+
+	public void setDataNascimento(Calendar dataNascimento) {
+		this.dataNascimento = dataNascimento;
+	}
+
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+	
+	public List<Entrada> getEntradas() {
+		return entradas;
+	}
+
+	public void setEntradas(List<Entrada> entradas) {
+		this.entradas = entradas;
 	}
 
 	@Override
