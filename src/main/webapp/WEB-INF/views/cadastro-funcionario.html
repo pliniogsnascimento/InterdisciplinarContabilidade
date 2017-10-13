@@ -5,27 +5,62 @@
 
 <section layout:fragment="conteudo">
 	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-6 col-md-offset-3 form-login">
-				<form>
+		<div class="row justify-content-center">
+			<h1>Cadastro de Funcionário</h1>
+		</div>
+
+		<div class="row justify-content-center form-horizontal" >
+			<div class="md-offset-3 col-md-6">
+				<form id="cpf-form" data-toggle="validator">
 					<div class="form-group">
-						<label for="exampleInputEmail1">Email address</label> <input
-							type="email" class="form-control" id="exampleInputEmail1"
-							aria-describedby="emailHelp" placeholder="Enter email"> <small
-							id="emailHelp" class="form-text text-muted">We'll never
-							share your email with anyone else.</small>
+						<label for="cpf">CPF</label> <input type="text"
+							class="form-control" name="cpf" id="cpf"
+							placeholder="Digite o cpf" maxlength="14"
+							onkeypress="formatar('###.###.###-##', this);" required>
 					</div>
 					<div class="form-group">
-						<label for="exampleInputPassword1">Password</label> <input
-							type="password" class="form-control" id="exampleInputPassword1"
-							placeholder="Password">
+						<label for="nome">Nome Completo</label> <input type="text"
+							class="form-control" name="nome" id="nome"
+							placeholder="Digite o nome completo" required>
 					</div>
-					<div class="form-check">
-						<label class="form-check-label"> <input type="checkbox"
-							class="form-check-input"> Check me out
-						</label>
+					<div class="form-row">
+						<div class="form-group col-md-4">
+							<label for="sexo" class="col-form-label">Sexo</label> <select
+								name="sexo" id="sexo" class="form-control">
+								<option>Masculino</option>
+								<option>Feminino</option>
+							</select>
+						</div>
+						<div class="form-group col-md-8">
+							<label for="dataNascimento" class="col-form-label">Data
+								de Nacimento</label> <input type="text" class="form-control"
+								name="dataNascimento" id="dataNascimento"
+								placeholder="Digite a data de nascimento" required>
+						</div>
 					</div>
-					<button type="submit" class="btn btn-primary">Submit</button>
+
+
+					<div class="form-group">
+						<label for="email" class="control-label">Email</label> <input
+							type="email" class="form-control" name="email" id="email"
+							aria-describedby="emailHelp"
+							data-error="Por favor, informe um e-mail correto."
+							placeholder="Digite o email" required>
+						<div class="help-block with-errors"></div>
+					</div>
+					<div class="form-group">
+						<label for="senha">Senha</label> <input type="password"
+							class="form-control" name="senha" id="senha" placeholder="Senha"
+							required>
+					</div>
+
+					<div class="form-group">
+						<label for="confirmaSenha">Confirmar Senha</label> <input
+							type="password" class="form-control" id="confirmaSenha"
+							placeholder="Confirme a senha" required>
+					</div>
+
+					<button type="submit" class="btn btn-primary">Cadastrar</button>
 				</form>
 			</div>
 		</div>

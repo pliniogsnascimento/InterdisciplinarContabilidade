@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="template/LayoutPadrao.html"
+	xmlns:th="http://www.thymeleaf.org">
+
+<section layout:fragment="conteudo">
+	<div class="container-fluid">
+		<div class="row justify-content-center">
+			<h1>Entrada de Estoque</h1>
+		</div>
+
+		<div class="row justify-content-center form-horizontal">
+			<div class="md-offset-3 col-md-6">
+				<form id="cpf-form">
+					<div class="form-group">
+						<label for="nome">Nome do Produto</label> <input type="text"
+							class="form-control" name="nome" id="nome"
+							placeholder="Digite o nome do produto" required>
+					</div>
+					<div class="form-group">
+						<label for="marca">Marca</label> <input type="text"
+							class="form-control" name="marca" id="marca"
+							placeholder="Digite a marca do produto" required>
+					</div>
+					<div class="form-group">
+						<label for="fabricante">Fabricante</label> <input type="text"
+							class="form-control" name="fabricante" id="fabricante"
+							placeholder="Digite o fabricante do produto" required>
+					</div>
+
+					<div class="form-group">
+						<label for="descricao">Descrição</label>
+						<textarea class="form-control" id="descricao" rows="3"></textarea>
+					</div>
+
+					<button type="submit" class="btn btn-primary">Cadastrar</button>
+				</form>
+			</div>
+
+
+
+
+			
+		</div>
+	</div>
+</section>
+
+</html>

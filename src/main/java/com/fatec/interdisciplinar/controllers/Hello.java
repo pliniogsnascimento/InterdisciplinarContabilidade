@@ -37,6 +37,36 @@ public class Hello {
 		return "cadastro-funcionario.html";
 	}
 	
+	@RequestMapping(value = "/CadastroEntrada")
+	public String cadastroProduto() {
+		return "cadastro-entrada.html";
+	}
+	
+	@RequestMapping(value = "/CadastroSaida")
+	public String cadastroSaida() {
+		return "cadastro-saida.html";
+	}
+	
+	@RequestMapping(value = "/BuscaFuncionario")
+	public String buscaFuncionario() {
+		return "busca-funcionario.html";
+	}
+	
+	@RequestMapping(value = "/BuscaEntrada")
+	public String buscaEntrada() {
+		return "busca-entrada.html";
+	}
+	
+	@RequestMapping(value = "/BuscaSaida")
+	public String buscaSaida() {
+		return "busca-saida.html";
+	}
+	
+	@RequestMapping(value = "/BuscaProduto")
+	public String buscaProduto() {
+		return "busca-produto.html";
+	}
+	
 	@RequestMapping(value = "/all", method = RequestMethod.GET)
 	@ResponseBody
 	public void getAll() {

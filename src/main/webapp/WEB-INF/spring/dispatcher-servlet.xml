@@ -11,6 +11,14 @@
 	<mvc:resources location="/resources/" mapping="/resources/**"></mvc:resources>
 
 	<context:component-scan base-package="com.fatec.interdisciplinar.controllers" />
+	
+	<!-- Configurações de mapeamento das views -->
+	<bean id="templateResolver"
+		class="org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver">
+		<property name="prefix" value="/WEB-INF/views/" />
+		<property name="suffix" value=".html" />
+		<property name="templateMode" value="HTML" />
+	</bean>
 
 	<!-- Configuração das views com spring -->
 	<bean id="viewResolver" class="org.thymeleaf.spring4.view.ThymeleafViewResolver">
@@ -34,12 +42,7 @@
 		</property>
 	</bean>
 
-	<!-- Configurações de mapeamento das views -->
-	<bean id="templateResolver"
-		class="org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver">
-		<property name="prefix" value="/WEB-INF/views/" />
-		<property name="templateMode" value="HTML" />
-	</bean>
+	
 
 	<!-- Resources HTML -->
 	<mvc:resources location="/resources/" mapping="/resources/**"></mvc:resources>

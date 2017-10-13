@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="template/LayoutPadrao.html"
+	xmlns:th="http://www.thymeleaf.org">
+<section layout:fragment="conteudo">
+	<div class="container-fluid">
+		<div class="row justify-content-center">
+			<div class="col-md-8 offset-md-2">
+				<form>
+					<div class="form-row campo-busca">
+						<div class="col">
+							<input type="text" class="form-control" placeholder="Buscar">
+						</div>
+						<div class="col">
+							<select name="sexo" id="sexo" class="form-control">
+								<option>Nome</option>
+								<option>ID</option>
+								<option>Data</option>
+								<option>Fabricante</option>
+							</select>
+						</div>
+						<button type="submit" class="btn btn-primary">Buscar</button>
+					</div>
+
+				</form>
+			</div>
+		</div>
+		<div class="row justify-content-center">
+			<div class="col-md-10 offset-md-1 justify-content-center">
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th>ID Produto</th>
+							<th>Nome</th>
+							<th>Marca</th>
+							<th>Fabricante</th>
+							<th>Quantidade</th>
+							<th>Lote</th>
+							<th>Valor Unitário</th>
+							<th>Data de Entrada</th>
+							<th>Excluir</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">1</th>
+							<td><a href="http://www.google.com">Galaxy s8</a></td>
+							<td>SAMSUNG</td>
+							<td>SAMSUNG LTDA.</td>
+							<td>150</td>
+							<td>17957</td>
+							<td>R$ 3.100,00</td>
+							<td>17/09/2015</td>
+							<td><a href="#"><img src="delete.png"
+									th:src="@{/resources/images/delete.png}"></a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</section>
+</html>
