@@ -4,6 +4,7 @@ import java.util.Calendar;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -33,6 +34,8 @@ public class Funcionario {
 	private List<Saida> saidas;
 	@OneToMany(targetEntity=Entrada.class ,mappedBy="funcionario", fetch=FetchType.LAZY)
 	private List<Entrada> entradas;
+	@Enumerated
+	private UserRoles ROLE;
 	
 
 
@@ -102,6 +105,15 @@ public class Funcionario {
 	
 	public List<Entrada> getEntradas() {
 		return entradas;
+	}
+
+
+	public UserRoles getROLE() {
+		return ROLE;
+	}
+
+	public void setROLE(UserRoles rOLE) {
+		ROLE = rOLE;
 	}
 
 	public void setEntradas(List<Entrada> entradas) {
