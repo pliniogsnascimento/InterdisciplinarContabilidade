@@ -10,19 +10,19 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.fatec.interdisciplinar.model.Funcionario;
 import com.fatec.interdisciplinar.service.FuncionarioService;
+import com.fatec.interdisciplinar.service.FuncionarioServiceImplementation;
 
 @Controller
 public class Hello {
 	
 	@Autowired
-	FuncionarioService funcionarioService;
+	private FuncionarioServiceImplementation funcionarioService;
 	
-	/*
 	@RequestMapping(value="/")
 	public String hello() {
-		return "hello.html";
+		return "index";
 	}
-	
+	/*
 	@RequestMapping(value="/index")
 	public String index() {
 		return "index.html";
