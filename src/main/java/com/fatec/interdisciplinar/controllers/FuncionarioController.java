@@ -17,7 +17,7 @@ public class FuncionarioController {
 		
 	}
 	
-	@RequestMapping(value = "/cadastro",method = RequestMethod.POST)
+	@RequestMapping(value = "/cadastro",method = RequestMethod.GET)
 	public String cadastrarFuncionario() {
 		// TODO implement here
 		return "cadastro-funcionario";

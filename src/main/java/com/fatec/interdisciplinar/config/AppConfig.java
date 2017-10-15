@@ -1,10 +1,6 @@
 package com.fatec.interdisciplinar.config;
 
-import java.util.Properties;
 
-import javax.persistence.EntityManagerFactory;
-
-import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
@@ -12,10 +8,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import org.springframework.orm.jpa.JpaTransactionManager;
-import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
-import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -28,10 +20,6 @@ import org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring4.view.ThymeleafViewResolver;
 import org.thymeleaf.templatemode.TemplateMode;
 import org.thymeleaf.templateresolver.ITemplateResolver;
-
-import com.fatec.interdisciplinar.service.FuncionarioService;/*
-import com.fatec.interdisciplinar.service.FuncionarioServiceImplementation;*/
-import com.fatec.interdisciplinar.service.FuncionarioServiceImplementation;
 
 import nz.net.ultraq.thymeleaf.LayoutDialect;
 
