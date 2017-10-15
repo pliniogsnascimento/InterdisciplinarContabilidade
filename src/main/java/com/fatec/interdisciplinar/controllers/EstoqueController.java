@@ -20,13 +20,13 @@ public class EstoqueController {
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public String listarProdutos() {
-		return "busca-produto.html";
+		return "busca-produto";
 	}
 	
 	@RequestMapping(value = "/nome/{nome}")
 	public String buscarProduto(@PathVariable String nome) {
 		// TODO implement here
-		return "busca-produto.html";
+		return "busca-produto";
 	}
 
 }

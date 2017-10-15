@@ -20,7 +20,7 @@ public class FuncionarioController {
 	@RequestMapping(value = "/cadastro",method = RequestMethod.POST)
 	public String cadastrarFuncionario() {
 		// TODO implement here
-		return "cadastro-funcionario.html";
+		return "cadastro-funcionario";
 	}
 	
 	public void cadastrarFuncionario(Funcionario funcionario) {
@@ -38,7 +38,7 @@ public class FuncionarioController {
 	@RequestMapping(value="/busca",method = RequestMethod.GET)
 	public String listarFuncionarios() {
 		// TODO implement here
-		return "busca-funcionario.html";
+		return "busca-funcionario";
 	}
 
 }

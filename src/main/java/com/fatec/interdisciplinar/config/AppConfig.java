@@ -22,6 +22,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.thymeleaf.TemplateEngine;
+import org.thymeleaf.dialect.IDialect;
 import org.thymeleaf.spring4.SpringTemplateEngine;
 import org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring4.view.ThymeleafViewResolver;
@@ -58,10 +59,16 @@ public class AppConfig extends WebMvcConfigurerAdapter implements ApplicationCon
 		viewResolver.setCharacterEncoding("UTF-8");
 		return viewResolver;
 	}
-
+	
+	public IDialect dialect() {
+		LayoutDialect dialect = new LayoutDialect();
+		return dialect;
+	}
+	
 	public TemplateEngine templateEngine() {
 		SpringTemplateEngine engine = new SpringTemplateEngine();
 		engine.setTemplateResolver(templateResolver());
+		engine.addDialect(dialect());
 		return engine;
 	}
 
@@ -69,11 +76,10 @@ public class AppConfig extends WebMvcConfigurerAdapter implements ApplicationCon
 		SpringResourceTemplateResolver resolver = new SpringResourceTemplateResolver();
 		resolver.setApplicationContext(applicationContext);
 		resolver.setPrefix("/WEB-INF/views/");
-		//resolver.setSuffix(".html");
+		resolver.setSuffix(".html");
 		resolver.setTemplateMode(TemplateMode.HTML);
 		return resolver;
 	}
-
 
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {

@@ -15,6 +15,7 @@ import com.fatec.interdisciplinar.service.FuncionarioServiceImplementation;
 @Controller
 public class Hello {
 	
+	/*
 	@Autowired
 	private FuncionarioServiceImplementation funcionarioService;
 	

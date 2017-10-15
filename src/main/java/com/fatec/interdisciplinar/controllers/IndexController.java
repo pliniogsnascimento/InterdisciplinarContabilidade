@@ -24,7 +24,7 @@ public class IndexController {
 	@RequestMapping(method = RequestMethod.GET)
 	public String goToLogin() {
 		System.out.println("invoked goToLogin()");
-		return "index.html";
+		return "index";
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
@@ -51,6 +51,6 @@ public class IndexController {
 	
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
 	public String home() {
-		return "home.html";
+		return "home";
 	}
 }

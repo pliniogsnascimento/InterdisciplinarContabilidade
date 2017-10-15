@@ -23,7 +23,7 @@ public class SaidaController {
 	@RequestMapping(value = "/cadastro",method = RequestMethod.GET)
 	public String registrarSaida() {
 		// TODO implement here
-		return "cadastro-entrada.html";
+		return "cadastro-entrada";
 	}
 	
 	@RequestMapping(value = "/cadastro",method = RequestMethod.POST)
@@ -34,7 +34,7 @@ public class SaidaController {
 	@RequestMapping(value = "/busca",method = RequestMethod.GET)
 	public String listarSaidas() {
 		// TODO implement here
-		return "busca-saida.html";
+		return "busca-saida";
 	}
 
 	public void buscarSaida(Saida saida) {

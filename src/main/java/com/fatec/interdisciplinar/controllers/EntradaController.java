@@ -20,7 +20,7 @@ public class EntradaController {
 	@RequestMapping(value = "/cadastro", method = RequestMethod.GET)
 	public String registrarEntrada() {
 		// TODO implementar registro de entradas
-		return "cadastro-entrada.html";
+		return "cadastro-entrada";
 	}
 	
 	@RequestMapping(value = "", method = RequestMethod.POST)
@@ -34,7 +34,7 @@ public class EntradaController {
 	@RequestMapping(value = "/busca", method = RequestMethod.GET)
 	public String listarEntradas() {
 		// TODO implementar busca de entradas
-		return "busca-entrada.html";
+		return "busca-entrada";
 	}
 
 	/**
@@ -43,7 +43,7 @@ public class EntradaController {
 	@RequestMapping(value = "/busca", method = RequestMethod.POST)
 	public String buscarEntrada(Entrada entrada) {
 		// TODO implementar busca de entradas
-		return "busca-entrada.html";
+		return "busca-entrada";
 	}
 
 }
