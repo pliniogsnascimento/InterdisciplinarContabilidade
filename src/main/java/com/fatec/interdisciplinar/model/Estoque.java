@@ -1,29 +1,23 @@
 package com.fatec.interdisciplinar.model;
 
+import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
-@Entity
 public class Estoque {
-	
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long id;
-	
+
+	private List<Lote> lotes;
+
 	public Estoque() {
-	
+
 	}
 
-	public Long getId() {
-		return id;
+	public List<Lote> getLotes() {
+		return lotes;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setLotes(List<Lote> lotes) {
+		this.lotes = lotes;
 	}
+
 
 
 }

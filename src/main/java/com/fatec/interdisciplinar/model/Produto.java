@@ -15,13 +15,9 @@ public class Produto {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long idProduto;
-
 	private String nome;
-
 	private String marca;
-
 	private String fabricante;
-
 	private String descricao;
 
 	public Long getIdProduto() {

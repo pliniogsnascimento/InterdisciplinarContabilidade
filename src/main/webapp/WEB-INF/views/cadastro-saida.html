@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="template/LayoutPadrao.html"
+	xmlns:th="http://www.thymeleaf.org">
+
+<section layout:fragment="conteudo">
+	<div class="container-fluid">
+		<div class="row justify-content-center">
+			<h1>Saída de Estoque</h1>
+		</div>
+
+		<div class="row justify-content-center form-horizontal">
+			<div class="md-offset-3 col-md-6">
+				<form id="cpf-form" data-toggle="validator">
+					<div class="form-group">
+						<label for="nome">Nome do Produto</label> <input type="text"
+							class="form-control" name="nome" id="nome"
+							placeholder="Digite o nome do produto" disabled>
+					</div>
+					<div class="form-group">
+						<label for="marca">Marca</label> <input type="text"
+							class="form-control" name="marca" id="marca"
+							placeholder="Digite a marca do produto" disabled>
+					</div>
+					<div class="form-group">
+						<label for="fabricante">Fabricante</label> <input type="text"
+							class="form-control" name="fabricante" id="fabricante"
+							placeholder="Digite o fabricante do produto" disabled>
+					</div>
+
+					<div class="form-group">
+						<label for="descricao">Descrição</label>
+						<textarea class="form-control" id="descricao" rows="3" disabled></textarea>
+					</div>
+
+					<div class="form-group">
+						<label for="quantidade">Quantidade</label> <input
+							class="form-control" id="quantidade" required>
+					</div>
+
+					<div class="form-row">
+						<div class="form-group col-md-4">
+							<label for="peps" class="col-form-label">Peps</label> <input
+								type="text" class="form-control" name="peps" id="peps" disabled>
+						</div>
+						<div class="form-group col-md-4">
+							<label for="ueps" class="col-form-label">Ueps</label> <input
+								type="text" class="form-control" name="ueps" id="ueps" disabled>
+						</div>
+						<div class="form-group col-md-4">
+							<label for="media" class="col-form-label">Media</label> <input
+								type="text" class="form-control" name="media" id="media"
+								disabled>
+						</div>
+					</div>
+
+					<fieldset class="form-group">
+						<legend>Tipo de Saída</legend>
+						<div class="form-check">
+							<label class="form-check-label"> <input type="radio"
+								class="form-check-input" name="metodoSaida" id="metodo1"
+								value="PEPS" checked> PEPS
+							</label>
+						</div>
+						<div class="form-check">
+							<label class="form-check-label"> <input type="radio"
+								class="form-check-input" name="metodoSaida" id="metodo2"
+								value="UEPS"> UEPS
+							</label>
+						</div>
+						<div class="form-check">
+							<label class="form-check-label"> <input type="radio"
+								class="form-check-input" name="metodoSaida" id="metodo3"
+								value="MEDIA"> MEDIA
+							</label>
+						</div>
+					</fieldset>
+					<button type="submit" class="btn btn-primary">Registrar
+						Saída</button>
+				</form>
+			</div>
+			
+		</div>
+	</div>
+
+</section>
+
+</html>

@@ -5,7 +5,7 @@ import javax.persistence.Entity;
 
 @Entity
 public class Gerente extends Funcionario {
-
+	
 	public Gerente() {
 
 	}
@@ -19,5 +19,5 @@ public class Gerente extends Funcionario {
 	public void setIdGerente(Long idGerente) {
 		this.idGerente = idGerente;
 	}
-
+	
 }

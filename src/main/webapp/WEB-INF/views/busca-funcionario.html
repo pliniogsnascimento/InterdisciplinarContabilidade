@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="template/LayoutPadrao.html"
+	xmlns:th="http://www.thymeleaf.org">
+
+<section layout:fragment="conteudo">
+	<div class="container-fluid">
+		<div class="row justify-content-center">
+			<div class="col-md-8 offset-md-2 justify-content-center">
+				<form>
+					<div class="form-row campo-busca">
+						<div class="col">
+							<input type="text" class="form-control" placeholder="Buscar">
+						</div>
+						<div class="col">
+							<select name="sexo" id="sexo" class="form-control">
+								<option>Nome</option>
+								<option>ID</option>
+							</select>
+						</div>
+						<button type="submit" class="btn btn-primary">Buscar</button>
+					</div>
+
+				</form>
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Nome</th>
+							<th>Email</th>
+							<th>Telefone</th>
+							<th>Data de Nascimento</th>
+							<th>Excluir</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">2</th>
+							<td>Plinio</td>
+							<td>plinio.gsnascimento@outlook.com</td>
+							<td>(11)98931-9136</td>
+							<td>17/09/1998</td>
+							<td><a th:href="" href="#"> <img
+									src="delete.png" th:src="@{/resources/images/delete.png}">
+							</a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</section>
+
+</html>

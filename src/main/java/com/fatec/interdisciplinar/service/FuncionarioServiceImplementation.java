@@ -11,6 +11,7 @@ import com.fatec.interdisciplinar.repository.FuncionarioRepository;
 @Service
 public class FuncionarioServiceImplementation implements FuncionarioService {
 
+	
 	@Autowired
 	FuncionarioRepository funcionarioRepository;
 	
@@ -18,8 +19,9 @@ public class FuncionarioServiceImplementation implements FuncionarioService {
 		funcionarioRepository.save(funcionario);
 	}
 
-	public List<Funcionario> finAll() {
+	public List<Funcionario> findAll() {
 		return funcionarioRepository.findAll();
 	}
+	
 
 }
